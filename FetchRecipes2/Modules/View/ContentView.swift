@@ -9,16 +9,17 @@ import SwiftUI
 
 struct DessertView: View {
     @State private var dessert: [Meal] = []
+    @State private var searchDessertText = ""
     
     let gridItemLayout = [
         GridItem(.adaptive(minimum: 150)),
         GridItem(.flexible(), spacing: 10)]
     
     func fetchDessertData() {
-        ApiCaller.fetchDesserts { dessert, error in
-            if let dessert = dessert?.meals {
+        ApiCaller.fetchDesserts { result, error in
+            if let result = result?.meals {
                 DispatchQueue.main.async {
-                    self.dessert = dessert
+                    self.dessert = result
                 }
             } else {
                 print(error?.localizedDescription as Any)
@@ -30,7 +31,10 @@ struct DessertView: View {
         NavigationView {
             ScrollView {
                 LazyVGrid(columns: gridItemLayout, spacing: 10) {
-                    ForEach(dessert, id: \.idMeal) { meal in
+                    ForEach(dessert.filter {
+                        searchDessertText.isEmpty ? true :
+                        $0.strMeal.localizedCaseInsensitiveContains(searchDessertText)
+                    }, id: \.idMeal) { meal in
                         VStack {
                             AsyncImageView(url: URL(string: meal.strMealThumb))
                                 .frame(width: 150, height: 150)
@@ -46,11 +50,13 @@ struct DessertView: View {
             }
             .navigationTitle("Desserts")
         }
+        .searchable(text: $searchDessertText, prompt: "Look up desserts 🍰")
         .onAppear {
             fetchDessertData()
         }
     }
 }
+
 
 struct DessertView_Preview: PreviewProvider {
     static var previews: some View {
