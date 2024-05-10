@@ -8,11 +8,17 @@
 import Foundation
 
 struct Recipe: Codable, Hashable {
-    let strMeal: String
-    let strInstructions: [String]?
-    let strIngredients: [String:String]?
+    let name: String
+    let instructions: [String]?
+    let ingredients: [String:String]?
+    static func == (lhs: Recipe, rhs: Recipe) -> Bool {
+        return lhs.ingredients == rhs.ingredients && lhs.name == rhs.name && lhs.instructions == rhs.instructions
+    }
 }
 
-struct RecipeResonse: Codable {
+struct RecipeResponse: Codable {
     let recipe: [Recipe]
+    enum CodingKeys: String, CodingKey {
+        case recipe = "meals"
+    }
 }

@@ -8,7 +8,6 @@
 import SwiftUI
 
 // Fetches images to be displayed asynchronously
-
 class ImageLoader: ObservableObject {
     @Published var image: UIImage?
     private let url: URL?

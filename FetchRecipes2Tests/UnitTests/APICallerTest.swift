@@ -11,7 +11,7 @@ import SwiftUI
 
 final class APICallerTest: XCTestCase {
     
-    // MARK: - Test fetchDesserts() for fetching data
+    // MARK: - Test Fetch functions
     func testFetchDesserts() {
         let expectation = self.expectation(description: "Desserts fetched successfully")
         
@@ -26,7 +26,7 @@ final class APICallerTest: XCTestCase {
         waitForExpectations(timeout: 5, handler: nil)
     }
     
-    // MARK: - UI test for DessertView
+    // MARK: - UI Tests
     func testDessertViewLoading() {
         let view = DessertView()
         

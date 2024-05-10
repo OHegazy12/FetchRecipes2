@@ -8,7 +8,6 @@
 import SwiftUI
 
 // Displays image fetched from ImageLoader
-
 struct AsyncImageView: View {
     @StateObject private var imageLoader: ImageLoader
     
