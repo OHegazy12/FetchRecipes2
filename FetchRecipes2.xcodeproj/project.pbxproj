@@ -142,8 +142,8 @@
 		18B365982BEA87CD00A537CB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				18B3659A2BEA87DB00A537CB /* ViewModel */,
 				18B365992BEA87D700A537CB /* View */,
+				18B3659A2BEA87DB00A537CB /* ViewModel */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -152,11 +152,11 @@
 			isa = PBXGroup;
 			children = (
 				18B3658C2BEA87C200A537CB /* DessertView.swift */,
-				186029362BED61F200BCFEA4 /* RecipeView.swift */,
 				1860293A2BED7B1400BCFEA4 /* IngredientsRow.swift */,
 				1860293C2BED7B1D00BCFEA4 /* IngredientsStack.swift */,
 				1860293E2BED7B7E00BCFEA4 /* InstructionsRow.swift */,
 				186029402BED7B8800BCFEA4 /* InstructionsStack.swift */,
+				186029362BED61F200BCFEA4 /* RecipeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -164,9 +164,9 @@
 		18B3659A2BEA87DB00A537CB /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				18B365AB2BEA955100A537CB /* RecipeCard.swift */,
-				18B365AD2BEA9AED00A537CB /* ImageLoader.swift */,
 				186029222BEC0B8F00BCFEA4 /* AsyncImageView.swift */,
+				18B365AD2BEA9AED00A537CB /* ImageLoader.swift */,
+				18B365AB2BEA955100A537CB /* RecipeCard.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -191,9 +191,9 @@
 		18B3659D2BEA87EC00A537CB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				18B365A52BEA923E00A537CB /* Ingredient.swift */,
 				18B365A12BEA8A8100A537CB /* Meals.swift */,
 				18B365A32BEA917A00A537CB /* Recipe.swift */,
-				18B365A52BEA923E00A537CB /* Ingredient.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
